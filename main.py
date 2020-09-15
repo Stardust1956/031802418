@@ -66,8 +66,10 @@ def main():
     answer_ad = sys.argv[3]
     answer = open(answer_ad, 'w')
     data1 = []
+    file1 = open(test_ad, 'r', encoding='utf-8')
+    file2 = open(copy_ad, 'r', encoding='utf-8')
     # 以utf-8格式，打开要测试的文件并按行读取拼接到data2列表中
-    for line in open(test_ad, 'r', encoding='utf-8'):
+    for line in file1:
         line = line.strip()
         if line != '\n':
             if line != '':
@@ -76,7 +78,7 @@ def main():
     # 以utf-8格式，打开要测试的文件并按行读取拼接到data2列表中
 
     data2 = []
-    for line in open(copy_ad, 'r', encoding='utf-8'):
+    for line in file2:
         line = line.strip()
         if line != '\n':
             if line != '':
@@ -90,14 +92,16 @@ def main():
     punc = '~`!#$%^&*()_+-=|\';":/.,?><~·！@#￥%……&*（）——+-=“”：’；、。，？》《{}'
     test1 = re.sub(r'[%s]+' % punc, '', test1)
     test2 = re.sub(r'[%s]+' % punc, '', test2)
-
-    topK = 1000
+    topK = int(len(test1))
     s = Similarity(test1, test2, topK)
     total = s.similar()
     print(total)
     answer.write(str(total))
     end = time.process_time()
     print('Running time: %s Seconds' % (end - start))
+    file1.close()
+    file2.close()
+    answer.close()
     return 0
 
 
