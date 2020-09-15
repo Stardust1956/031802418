@@ -4,6 +4,7 @@ import re
 import jieba.analyse
 from functools import reduce
 from math import sqrt
+import time
 
 
 # 用余弦相似度计算文本相似度
@@ -59,6 +60,7 @@ class Similarity:
 
 # 输入模块(命令行执行)
 def main():
+    start = time.process_time()
     test_ad = sys.argv[1]
     copy_ad = sys.argv[2]
     answer_ad = sys.argv[3]
@@ -94,6 +96,8 @@ def main():
     total = s.similar()
     print(total)
     answer.write(str(total))
+    end = time.process_time()
+    print('Running time: %s Seconds' % (end - start))
     return 0
 
 
