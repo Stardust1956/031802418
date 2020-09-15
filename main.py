@@ -1,4 +1,5 @@
 import sys
+import re
 
 
 # 输入模块(命令行执行)
@@ -27,7 +28,14 @@ def main():
     # 连接每个行使其成为一个完整的文本存入字符串中
     test1 = ''.join(data1)
     test2 = ''.join(data2)
+    # 去符号
+    # punc用来记录去符号的标志字符串
+    punc = '~`!#$%^&*()_+-=|\';":/.,?><~·！@#￥%……&*（）——+-=“”：’；、。，？》《{}'
+    test1 = re.sub(r'[%s]+' % punc, '', test1)
+    test2 = re.sub(r'[%s]+' % punc, '', test2)
     print(test1)
     print(test2)
-# 去符号
+
+
+main()
 # 用余弦相似度计算文本相似度
