@@ -40,92 +40,146 @@ def yuchuli(position1, position2):
 
 
 class Testformain(unittest.TestCase):
-    def setUp(self):
-        print("开始单元测试")
-
-    def tearDown(self):
-        print("测试结束")
 
     def test_itself(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test1")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_add(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_add.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test2")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_del(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_del.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test3")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_dis_1(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_dis_1.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test4")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_dis_3(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_dis_3.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test5")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_dis_7(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_dis_7.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test6")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_dis_10(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_dis_10.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test7")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_dis_15(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_dis_15.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test8")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_mix(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_mix.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test9")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
     def test_rep(self):
         start = time.process_time()
         t1, t2 = yuchuli("D:\\sim\orig.txt", "D:\\sim\orig_0.8_rep.txt")
         s = Similarity(t1, t2, int(len(t1)))
+        print("Test10")
         print(s.similar())
         end = time.process_time()
         print('Running time: %s Seconds' % (end - start))
+        print()
 
+    def test_my1(self):
+        start = time.process_time()
+        t1, t2 = yuchuli("D:\\sim\mytest1.txt", "D:\\sim\mytest1_1.txt")
+        s = Similarity(t1, t2, int(len(t1)))
+        print("Myest_1")
+        print(s.similar())
+        end = time.process_time()
+        print('Running time: %s Seconds' % (end - start))
+        print()
+
+    def test_my2(self):
+        start = time.process_time()
+        t1, t2 = yuchuli("D:\\sim\mytest2.txt", "D:\\sim\mytest2_2.txt")
+        s = Similarity(t1, t2, int(len(t1)))
+        print("Myest_2")
+        print(s.similar())
+        end = time.process_time()
+        print('Running time: %s Seconds' % (end - start))
+        print()
+
+    def test_my3(self):
+        start = time.process_time()
+        t1, t2 = yuchuli("D:\\sim\mytest3.txt", "D:\\sim\mytest3_3.txt")
+        s = Similarity(t1, t2, int(len(t1)))
+        print("Myest_3")
+        print(s.similar())
+        end = time.process_time()
+        print('Running time: %s Seconds' % (end - start))
+        print()
+
+    def test_my4(self):
+        start = time.process_time()
+        t1, t2 = yuchuli("D:\\sim\mytest4.txt", "D:\\sim\mytest4_4.txt")
+        s = Similarity(t1, t2, int(len(t1)))
+        print("Myest_4")
+        print(s.similar())
+        end = time.process_time()
+        print('Running time: %s Seconds' % (end - start))
+        print()
 
 if __name__ == '__main__':
     unittest.main()

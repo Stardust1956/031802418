@@ -40,7 +40,10 @@ class Similarity:
             _mid = _max - _min
             # print _min, _max, _mid
             for key2 in vdict:
-                vdict[key2] = (vdict[key2] - _min) / _mid
+                try:
+                    vdict[key2] = (vdict[key2] - _min) / _mid
+                except ZeroDivisionError:
+                    vdict[key2] = 0.00
             return vdict
 
         self.vdict1 = mapminmax(self.vdict1)
@@ -55,7 +58,11 @@ class Similarity:
             sum2 += self.vdict1[key] * self.vdict2[key]
         A = sqrt(reduce(lambda x, y: x + y, map(lambda x: x * x, self.vdict1.values())))
         B = sqrt(reduce(lambda x, y: x + y, map(lambda x: x * x, self.vdict2.values())))
-        return round(sum2 / (A * B), 2)
+        try:
+            ans=round(sum2 / (A * B), 2)
+        except ZeroDivisionError:
+            ans=0.00
+        return ans
 
 
 # 输入模块(命令行执行)
